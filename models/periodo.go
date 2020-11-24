@@ -6,6 +6,7 @@ import (
 	"reflect"
 	"strings"
 	"time"
+
 	"github.com/astaxie/beego/orm"
 )
 
@@ -22,7 +23,7 @@ type Periodo struct {
 	FinVigencia       time.Time  `orm:"column(fin_vigencia);type(timestamp without time zone)"`
 	FechaCreacion     time.Time  `orm:"column(fecha_creacion);type(timestamp without time zone)"`
 	FechaModificacion time.Time  `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
-	ParametroId       *Parametro `orm:"column(parametro_id);rel(fk)"`
+	ParametroId       *Parametro `orm:"column(parametro_id);rel(fk)" `
 }
 
 func (t *Periodo) TableName() string {
