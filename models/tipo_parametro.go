@@ -43,7 +43,7 @@ func AddTipoParametro(m *TipoParametro) (id int64, err error) {
 func GetTipoParametroById(id int) (v *TipoParametro, err error) {
 	o := orm.NewOrm()
 	v = &TipoParametro{Id: id}
-	if err = o.Read(v); err == nil {
+	if err = o.Read(v); err == nil { 
 		return v, nil
 	}
 	return nil, err
