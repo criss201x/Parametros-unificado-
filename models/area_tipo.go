@@ -6,6 +6,7 @@ import (
 	"reflect"
 	"strings"
 	"time"
+
 	"github.com/astaxie/beego/orm"
 )
 
@@ -48,7 +49,7 @@ func GetAreaTipoById(id int) (v *AreaTipo, err error) {
 }
 
 // GetAllAreaTipo retrieves all AreaTipo matches certain condition. Returns empty list if
-// no records exist
+// records exist
 func GetAllAreaTipo(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -102,7 +103,7 @@ func GetAllAreaTipo(query map[string]string, fields []string, sortby []string, o
 		}
 	}
 
-	var l []AreaTipo
+	var l []AreaTipos
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
