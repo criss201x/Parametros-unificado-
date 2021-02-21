@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	orm.Debug = true
+	//orm.Debug = true
 	orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
